@@ -4,7 +4,7 @@ namespace Models.DB;
 
 public class WebsiteContext : DbContext {
 
-    // public DbSet<Class> Classes {get; set;}
+    public DbSet<User> Users {get; set;}
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -13,4 +13,17 @@ public class WebsiteContext : DbContext {
         optionsBuilder.UseMySql(con, ServerVersion.AutoDetect(con));
 
     }
+
+    protected override void OnModelCreating(ModelBuilder builder){
+        builder.Entity<User>().HasIndex(u => u.Email).IsUnique();
+    }
+
+    public async Task SaveToDbAsync(WebsiteContext wc){
+        try {
+            await wc.SaveChangesAsync();
+        }
+        catch(Exception e){
+            System.Console.WriteLine(e.Message);
+        }
+    } 
 }

@@ -4,16 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MaturaExample</title>
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/MaturaExample.styles.css" asp-append-version="true" /> *@
 </head>
 <body>
+    <div class="header">
+        Cool Header :)
+    </div>
+
     <partial name="Navbar"/>
 
     <main>
         @RenderBody()
     </main>
+
+    <footer>
+        Cool Footer :)
+    </footer>
 
     @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,46 @@
+@model Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+register
+<form method="post" asp-controller="user" asp-asp-action="register">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Register</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Email</td>
+                <td> <input type="email" asp-for="Email" /> </td>
+                <td> <span asp-validation-for="Email"> </span> </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td> <input type="password" asp-for="Password" /> </td>
+                <td> <span asp-validation-for="Password"> </span> </td>
+            </tr>
+            <tr>
+                <td>PasswordRetype</td>
+                <td> <input type="password" asp-for="PasswordRetype" /> </td>
+                <td> <span asp-validation-for="PasswordRetype"> </span> </td>
+            </tr>
+            <tr>
+                <td>Birthdate</td>
+                <td> <input type="date" asp-for="Birthdate"/> </td>
+                <td> <span asp-validation-for="Birthdate"> </span> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <button type="submit">Submit</button> </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Register</td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
