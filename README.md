@@ -38,7 +38,7 @@
 - Userverwaltung: Registration, Login, Passwort-Hash erzeugen/vergleichen
 
 ### ORM
--notwendige NuGet-Pakete
+- notwendige NuGet-Pakete
 - Convention over Configuration
 - Klassen für die DB vorbereiten (ID, Navigationsproperties (1:1-, 1:n-; m:n-Beziehungen))
 - Db-Kontextklasse + Inhalt
@@ -53,3 +53,7 @@
 ### Architekturmuster
 - MVVM
 - MVC
+
+### Patterns
+- Observer
+- Strategy
