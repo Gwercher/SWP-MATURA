@@ -31,6 +31,11 @@ public class UserController : Controller{
 
             User? userDb = await con.Users.FindAsync(user.Email);
 
+            if(userDb == null){
+                ModelState.AddModelError("Email", "Incorrect Login Information");
+                return View(user);
+            }
+
             PasswordVerificationResult hashResult = hasher.VerifyHashedPassword(user, userDb.Password, user.Password);
             
             if(hashResult == PasswordVerificationResult.Failed){

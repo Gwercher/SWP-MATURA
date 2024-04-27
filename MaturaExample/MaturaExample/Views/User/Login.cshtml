@@ -4,7 +4,7 @@
     ViewData["Title"] = "Login";
 }
 
-<form method="post" asp-controller="user" asp-action="login">
+<form method="post" asp-controller="user" asp-action="login" onsubmit="return validateLogin()">
     <table>
         <thead>
             <tr>
@@ -15,15 +15,15 @@
             <tr>
                 <td>Email</td>
                 <td> <input type="email" asp-for="Email"> </td>
-                <td> <span asp-validation-for="Email" ></span> </td>
+                <td> <span id="EmailErr" asp-validation-for="Email" ></span> </td>
             </tr>
             <tr>
                 <td>Password</td>
                 <td> <input type="password" asp-for="Password"> </td>
-                <td> <span asp-validation-for="Password"></span> </td>
+                <td> <span id="PasswordErr" asp-validation-for="Password"></span> </td>
             </tr>
             <tr>
-                <td colspan="3"> <button type="submit">Submit</button> </td>
+                <td colspan="3"> <input type="submit" value="Submit"/> </td>
             </tr>
         </tbody>
         <tfoot>
@@ -31,3 +31,5 @@
         </tfoot>
     </table>
 </form>
+
+<script src="~/js/FormValidation.js" defer></script>
