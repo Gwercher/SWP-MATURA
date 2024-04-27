@@ -1,5 +1,13 @@
-﻿@{
+﻿@using Models
+@inject IHttpContextAccessor Accessor
+@{
     ViewData["Title"] = "Home Page";
+
+    User? user = Accessor.HttpContext?.Session.GetObject<User>("LOGIN_USER");
 }
 
 Home, Index Page
+
+@if(user != null){
+    <p>@user.Email</p>
+}

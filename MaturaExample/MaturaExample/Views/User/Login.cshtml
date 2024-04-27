@@ -1,5 +1,33 @@
+@model Models.User
+
 @{
     ViewData["Title"] = "Login";
 }
 
-login
+<form method="post" asp-controller="user" asp-action="login">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3">Login</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Email</td>
+                <td> <input type="email" asp-for="Email"> </td>
+                <td> <span asp-validation-for="Email" ></span> </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td> <input type="password" asp-for="Password"> </td>
+                <td> <span asp-validation-for="Password"></span> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <button type="submit">Submit</button> </td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+</form>
