@@ -18,9 +18,9 @@ public class WebsiteContext : DbContext {
         builder.Entity<User>().HasIndex(u => u.Email).IsUnique();
     }
 
-    public async Task SaveToDbAsync(WebsiteContext wc){
+    public async Task SaveToDbAsync(){
         try {
-            await wc.SaveChangesAsync();
+            await SaveChangesAsync();
         }
         catch(Exception e){
             System.Console.WriteLine(e.Message);

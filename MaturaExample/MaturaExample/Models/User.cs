@@ -10,7 +10,5 @@ public class User {
     [NotMapped]
     public string? PasswordRetype {get; set;}
     public DateTime Birthdate {get; set;}
-    // public string Role {get; set;} = "DEFAULT";
-
     public Role Role {get; set;} = Role.Default;
 }

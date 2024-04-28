@@ -89,7 +89,7 @@ public class UserController : Controller{
 
             con.Users.Add(user);
 
-            await con.SaveToDbAsync(con);
+            await con.SaveToDbAsync();
         }
 
         return RedirectToAction("index", "home");
@@ -129,7 +129,7 @@ public class UserController : Controller{
 
             userFromDb.Birthdate = user.Birthdate;
             userFromDb.Role = user.Role;
-            await con.SaveToDbAsync(con);
+            await con.SaveToDbAsync();
 
             return RedirectToAction("ShowUsers", "User");
         }
