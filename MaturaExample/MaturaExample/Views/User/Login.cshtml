@@ -14,12 +14,12 @@
         <tbody>
             <tr>
                 <td>Email</td>
-                <td> <input type="email" asp-for="Email"> </td>
+                <td> <input type="email" asp-for="Email" onblur="validateEmail()"> </td>
                 <td> <span id="EmailErr" asp-validation-for="Email" ></span> </td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td> <input type="password" asp-for="Password"> </td>
+                <td> <input type="password" asp-for="Password" onblur="validatePassword()"> </td>
                 <td> <span id="PasswordErr" asp-validation-for="Password"></span> </td>
             </tr>
             <tr>
