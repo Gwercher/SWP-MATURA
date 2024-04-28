@@ -23,7 +23,7 @@
 
 ## ASP.NET
 ### MVC
-- Allgemein: MVC-Pattern, Controller, Views, _Layout.cshtml, site.css
+- :white_check_mark: Allgemein: MVC-Pattern, Controller, Views, _Layout.cshtml, site.css
 - Middleware: URL-Routing (URL-Mapping)
 - partielle Views, Daten (Instanz/Objekt an partielle View übergeben)
 - Daten (Instanz/Objekt + Listen) an View übergeben und darstellen
@@ -40,7 +40,7 @@
 ### ORM
 - notwendige NuGet-Pakete
 - Convention over Configuration
-- Klassen für die DB vorbereiten (ID, Navigationsproperties (1:1-, 1:n-; m:n-Beziehungen))
+- :x: Klassen für die DB vorbereiten (ID, Navigationsproperties (1:1-, 1:n-; m:n-Beziehungen))
 - Db-Kontextklasse + Inhalt
 - Migrations
 - Datenverarbeitung: eintragen, löschen, ändern, auswählen
