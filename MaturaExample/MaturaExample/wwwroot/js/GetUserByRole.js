@@ -9,7 +9,6 @@ window.onload = () => {
         let options = JSON.parse(this.responseText);
         let select = document.getElementById("AllRolesSelect");
         
-
         for(let i = 0; i < options.length; i++){
             let opt = new Option();
             opt.text = options[i];
@@ -43,7 +42,9 @@ function getUserByRole(e) {
             body += "<td>"+ u.email +"</td>";
             body += "<td>"+ dateFormat +"</td>";
             body += "<td>"+ RoleEnum[u.role] +"</td>";
+            body += "<form action='/user/ChangeUser' method='post'>"
             body += "<td><form action='/user/changeUser' methode?'post'> <input type='hidden' value='"+ u.email +"' name='Email'> <input type='submit' value='Change Data'></td>";
+            body += "</form>"
             body += "<td><button onclick='DeleteUser(this.value)' value='"+ u.email+"'>Delete</button></td>";
             body += "</tr>";
         }
