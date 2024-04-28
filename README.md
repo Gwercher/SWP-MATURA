@@ -50,10 +50,10 @@
 - :white_check_mark: Zugriff per JavaScript (AJAX)
 
 ## Design Patterns
-### Architekturmuster
-- MVVM
-- MVC
-
 ### Patterns
 - :x: Observer
 - :x: Strategy
+
+### Architekturmuster
+- MVVM
+- MVC
