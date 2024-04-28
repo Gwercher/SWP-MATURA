@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MaturaExample</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/MaturaExample.styles.css" asp-append-version="true" /> *@
 </head>
 <body>
-    <div class="header">
-        Cool Header :)
-    </div>
+    @using Models
+    @inject IHttpContextAccessor Accessor
+    @{
+        User? user = Accessor.HttpContext?.Session.GetObject<User>("LOGIN_USER");
+    }
+    <header>
+        <span id="header-wow">Wow!</span>
+        <b>Cool Header :)</b>
+        @if(user != null){
+            <span>Hello, @user.Email</span>
+        }
+    </header>
 
-    <partial name="Navbar"/>
+    @* partial view, passing in @user *@
+    <partial name="Navbar" model="@user"/>
 
     <main>
         @RenderBody()
     </main>
 
     <footer>
-        Cool Footer :)
+        <img src="~/img/csharp.png">
+        <i>Cool Footer :)</i>
     </footer>
-
-    @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false) *@
+    
 </body>
 </html>

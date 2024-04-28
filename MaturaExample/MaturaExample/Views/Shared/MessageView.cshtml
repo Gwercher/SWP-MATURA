@@ -1,0 +1,17 @@
+@model Models.Message
+
+@{
+    ViewData["Title"] = "Message!";
+}
+
+@if(Model.Title != null){
+    <h1>@Model.Title</h1>
+}
+
+@if(Model.Description != null){
+    <h2>@Model.Description</h2>
+}
+
+@if(Model.Solution != null){
+    <h2>@Model.Solution</h2>
+}

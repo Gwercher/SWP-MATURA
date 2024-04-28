@@ -47,7 +47,7 @@ public class UserController : Controller{
 
             HttpContext.Session.SetObject<User>(user, "LOGIN_USER");
 
-            return RedirectToAction("index", "home");
+            return View("MessageView", new Message(){Title = "Succesful Login"});
         }
     }
 
@@ -92,7 +92,7 @@ public class UserController : Controller{
             await con.SaveToDbAsync();
         }
 
-        return RedirectToAction("index", "home");
+        return View("MessageView", new Message(){Title = "Succesful Registration", Description = "Login to use many cool Features!"});
     }
     
     public async Task<IActionResult> ShowUsers(){

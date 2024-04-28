@@ -1,15 +1,19 @@
-@using Models
+@* manual session get *@
+@* @using Models
 @inject IHttpContextAccessor Accessor
 @{
     User? user = Accessor.HttpContext?.Session.GetObject<User>("LOGIN_USER");
-}
+} *@
+
+@* use passed in data like in other views *@
+@model Models.User
 
 <nav>
     <ul>
         <li> <a href="/home/index">Home</a> </li>
         <li> <a href="/home/aboutus">About Us</a> </li>
         <li> <a href="/user/showusers">Show Users</a> </li>
-        @if(user == null){
+        @if(Model == null){
             <li> <a href="/user/login">Login</a> </li>
             <li> <a href="/user/register">Register</a> </li>
         }

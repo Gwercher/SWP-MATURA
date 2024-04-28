@@ -6,7 +6,7 @@ nav {
   float: left;
 }
 
-li {
+nav li {
   list-style: none;
 }
 
@@ -22,7 +22,7 @@ a:hover {
   transition: 0.3s;
 }
 
-.header {
+header {
   text-align: right;
   border-bottom: 1px solid black;
   height: 5vh;
@@ -40,7 +40,20 @@ main {
 footer {
   clear: both;
 
+  font-size: large;
   height: 5vh;
   text-align: left;
   border-top: 1px solid black;
+}
+
+footer img {
+  height: 100%;
+}
+
+#header-wow {
+  color: firebrick;
+}
+
+ul, ol, li {
+  text-align: left;
 }
