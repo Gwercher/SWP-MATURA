@@ -1,5 +1,7 @@
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Models;
 using Models.DB;
@@ -93,4 +95,49 @@ public class UserController : Controller{
         return RedirectToAction("index", "home");
     }
     
+    public async Task<IActionResult> ShowUsers(){
+        using(WebsiteContext con = new WebsiteContext()){
+            List<User> users = await con.Users.ToListAsync();
+            return View(users);
+        }
+    }
+
+    public async Task<IActionResult> ChangeUser(string email){
+        using(WebsiteContext con = new WebsiteContext()){
+            User? user = await con.Users.FindAsync(email);
+
+            return View(user);
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ChangeUserPost(User user){
+        if(user.Birthdate > DateTime.Today){
+            ModelState.AddModelError("Birthdate", "Birthdate must be in the past");
+        }
+
+        if(!ModelState.IsValid){
+            return View("ChangeUser", user);
+        }
+
+        using(WebsiteContext con = new WebsiteContext()){
+            User? userFromDb = await con.Users.FindAsync(user.Email);
+
+            if(userFromDb == null){
+                return View("ChangeUser", user);
+            }
+
+            userFromDb.Birthdate = user.Birthdate;
+            userFromDb.Role = user.Role;
+            await con.SaveToDbAsync(con);
+
+            return RedirectToAction("ShowUsers", "User");
+        }
+
+    }
+
+    public IActionResult Deleteuser(string email){
+        return new JsonResult(email);
+    }
+
 }

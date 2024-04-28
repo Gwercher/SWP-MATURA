@@ -1,5 +1,5 @@
 namespace Models;
 
 public enum Role {
-    Default, Admin
+    Default, Admin, Special, VIP
 }

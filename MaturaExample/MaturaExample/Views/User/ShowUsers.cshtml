@@ -1,0 +1,38 @@
+@model List<Models.User>
+
+@{
+    ViewData["Title"] = "Show Users";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Birthdate</th>
+            <th>Role</th>
+            <th><select id="AllRolesSelect" selected="-1" onchange="getUserByRole(this.value)">
+                <option value="-1">All</option>
+            </select></th>
+        </tr>
+    </thead>
+    <tbody id="AllUsersTableBody">
+        @foreach(Models.User u in Model){
+            <tr>
+                <td>@u.Email</td>
+                <td>@u.Birthdate.ToShortDateString()</td>
+                <td>@u.Role</td>
+                <td>
+                    <form asp-controller="user" asp-action="ChangeUser">
+                        <input type="hidden" value="@u.Email" name="Email">
+                        <input type="submit" value="Change Data">
+                    </form>
+                </td>
+                <td> <button onclick="DeleteUser(this.value)" value="@u.Email">Delete</button> </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+<script src="~/js/DeleteUser.js" defer></script>
+<script src="~/js/GetUserByRole.js" defer></script>

@@ -1,0 +1,33 @@
+@model Models.User
+
+@{
+    ViewData["Title"] = "Change User";
+}
+
+<form method="post" asp-controller="user" asp-action="ChangeUserPost">
+    <table>
+        <thead>
+            <tr>
+                <th>Change User</th>
+            </tr>
+        </thead>
+        <tbody>
+            <input type="hidden" value="@Model.Email" asp-for="Email">
+            <tr>
+                <td>Birthdate</td>
+                <td><input type="date" value="@Model.Birthdate.ToString("yyyy-MM-dd")" asp-for="Birthdate"></td>
+                <td><span asp-validation-for="Birthdate"></span></td>
+            </tr>
+            <tr>
+                <td>Role</td>                                
+                <td><select id="AllRolesSelect" asp-for="Role"></select></td>                            
+                <td></td>                                
+            </tr>
+            <tr>
+                <td colspan="3"><input type="submit" value="Change User"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<script src="~/js/ChangeUser.js" defer></script>
