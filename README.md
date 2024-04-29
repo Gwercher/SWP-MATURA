@@ -51,7 +51,7 @@
 
 ## Design Patterns
 ### Patterns
-- :x: Observer
+- :white_check_mark: Observer
 - :x: Strategy
 
 ### Architekturmuster
