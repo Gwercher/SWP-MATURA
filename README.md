@@ -52,7 +52,7 @@
 ## Design Patterns
 ### Patterns
 - :white_check_mark: Observer
-- :x: Strategy
+- :white_check_mark: Strategy
 
 ### Architekturmuster
 - MVVM
