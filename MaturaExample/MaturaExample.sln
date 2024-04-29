@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "Observer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{8D248DD1-E1AD-451C-AF1A-DB5C726D7B0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrmExample", "OrmExample\OrmExample.csproj", "{09F4D46B-E7C7-43AE-8B4A-6D4178AA316D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{8D248DD1-E1AD-451C-AF1A-DB5C726D7B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D248DD1-E1AD-451C-AF1A-DB5C726D7B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D248DD1-E1AD-451C-AF1A-DB5C726D7B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4227A917-F823-4E35-A773-66154E64B5FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4227A917-F823-4E35-A773-66154E64B5FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4227A917-F823-4E35-A773-66154E64B5FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4227A917-F823-4E35-A773-66154E64B5FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309EC35D-A57C-49E7-9029-68AD427DC737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309EC35D-A57C-49E7-9029-68AD427DC737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309EC35D-A57C-49E7-9029-68AD427DC737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309EC35D-A57C-49E7-9029-68AD427DC737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F4D46B-E7C7-43AE-8B4A-6D4178AA316D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F4D46B-E7C7-43AE-8B4A-6D4178AA316D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F4D46B-E7C7-43AE-8B4A-6D4178AA316D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F4D46B-E7C7-43AE-8B4A-6D4178AA316D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
