@@ -8,6 +8,7 @@ public class Address {
     public string PostalCode {get; set;}
     public string Street {get; set;}
     public string HouseNumber {get; set;}
+    public List<User> Users {get; set;} = new List<User>();
 
     public Address() : this("STD POSTAL", "STD STREET", "STD HOUSENR"){}
     public Address(string postal, string street, string housNr){

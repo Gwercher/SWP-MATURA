@@ -5,7 +5,8 @@ builder.Services.AddControllersWithViews();
 
 // session 
 builder.Services.AddDistributedMemoryCache();
-builder.Services.AddHttpContextAccessor();builder.Services.AddSession(options =>
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(1000);
     options.Cookie.HttpOnly = true;

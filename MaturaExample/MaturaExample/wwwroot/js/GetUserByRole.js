@@ -8,7 +8,7 @@ window.onload = () => {
     xml.onload = function() {
         let roles = JSON.parse(this.responseText);
         let select = document.getElementById("AllRolesSelect");
-        
+
         let option = "<option value='-1'>All</option>";
         for(let i = 0; i < roles.length; i++){
             option += "<option value='" + i + "'>"+ roles[i] +"</option>";

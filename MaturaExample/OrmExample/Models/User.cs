@@ -21,6 +21,15 @@ public class User {
     {
         string output = "id=" + Id + ", name=" + Name + ", birthdate=" + Birthdate.ToShortDateString();
 
+        if(Address != null){
+            output += "\n" + Address.ToString();
+        }
+        if(Newsletters.Count > 0){
+            foreach(Newsletter n in Newsletters){
+                output += "\n" + n.ToString();
+            }
+        }
+
         return output;
     }
 

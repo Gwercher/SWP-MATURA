@@ -20,17 +20,22 @@ namespace OrmExample {
                 con.Newsletters.Add(n2);
 
                 u1.Address = a1;
+                a1.Users.Add(u1);
                 u1.Newsletters.Add(n1);
                 u1.Newsletters.Add(n2);
 
                 User u2 = new User("DJ DIESEL", new DateTime(1900, 1, 1));
                 con.Users.Add(u2);
 
+                a1.Users.Add(u2);
                 u2.Address = a1;
 
                 con.SaveChanges();
 
-
+                List<User> us = con.Users.ToList<User>();
+                foreach(User u in us){
+                    System.Console.WriteLine(u.ToString() + "\n");
+                }
 
             }
 

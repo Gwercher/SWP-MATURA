@@ -20,7 +20,7 @@ public class ApiController : ControllerBase {
         return new JsonResult(Enum.GetNames(typeof(Role)));
     }
 
-    [HttpPost]
+    [HttpDelete]
     [Route("deleteUser")]
     public IActionResult DeleteUser(string email){
         using(WebsiteContext con = new WebsiteContext()){
