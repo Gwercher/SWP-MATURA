@@ -4,14 +4,13 @@ window.onload = () => {
     xml.open("GET", "http://localhost:5003/api/getAllRoles");
     xml.send();
     xml.onload = function() {
-        let options = JSON.parse(this.responseText);
+        let roles = JSON.parse(this.responseText);
         let select = document.getElementById("AllRolesSelect");
         
-        for(let i = 0; i < options.length; i++){
-            let opt = new Option();
-            opt.text = options[i];
-            opt.value = i;
-            select.appendChild(opt);
+        let option = "<option value='-1'>All</option>";
+        for(let i = 0; i < roles.length; i++){
+            option += "<option value='" + i + "'>"+ roles[i] +"</option>";
         }
+        select.innerHTML = option;
     }
 }
